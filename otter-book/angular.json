@@ -123,6 +123,46 @@
           }
         }
       }
+    },
+    "schema-flat-drawer": {
+      "projectType": "library",
+      "root": "projects/schema-flat-drawer",
+      "sourceRoot": "projects/schema-flat-drawer/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/schema-flat-drawer/tsconfig.lib.json",
+            "project": "projects/schema-flat-drawer/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/schema-flat-drawer/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/schema-flat-drawer/src/test.ts",
+            "tsConfig": "projects/schema-flat-drawer/tsconfig.spec.json",
+            "karmaConfig": "projects/schema-flat-drawer/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/schema-flat-drawer/tsconfig.lib.json",
+              "projects/schema-flat-drawer/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }},
   "defaultProject": "otter-book"
 }
