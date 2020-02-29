@@ -4,8 +4,8 @@ My Portfolio App
 
 This is an app created by me as my portfolio app where I will store all my achivments in technologies that i working one.
 
-Frontend: Angular 9
-Backend: NestJS
+Frontend: Angular 9 /
+Backend: NestJS /
 Database: MongoDB
 
 
