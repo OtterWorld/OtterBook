@@ -1,0 +1,19 @@
+{
+  "name": "otterbook",
+  "version": "0.0.1",
+  "description": "Portfolio App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OtterWorld/OtterBook.git"
+  },
+  "author": "OtterWorld",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OtterWorld/OtterBook/issues"
+  },
+  "homepage": "https://github.com/OtterWorld/OtterBook#readme"
+}
