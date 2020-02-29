@@ -17,3 +17,4 @@ Git code catalog :
 3# - destroying files
 4# - clear stash / reverse
 5# - merges
+6# - libraries updates
