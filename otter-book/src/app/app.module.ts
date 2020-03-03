@@ -20,12 +20,13 @@ import { WebsitesDashboardComponent } from "./websites-dashboard/websites-dashbo
 
 import { MaterialModule } from "./material";
 
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     CatalogComponent,
-    WebsitesDashboardComponent
+    WebsitesDashboardComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,7 +41,7 @@ import { MaterialModule } from "./material";
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MaterialModule
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
