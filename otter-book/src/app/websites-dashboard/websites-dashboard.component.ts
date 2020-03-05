@@ -22,7 +22,20 @@ export class WebsitesDashboardComponent {
       }
 
       return [
-        { title: 'website 1', cols: 1, rows: 1 }
+        { title: 'website 1', cols: 1, rows: 1 },
+        { title: 'website 2', cols: 1, rows: 1 },
+        { title: 'website 3', cols: 1, rows: 1 },
+        { title: 'website 4', cols: 1, rows: 1 },
+        { title: 'website 5', cols: 1, rows: 1 },
+        { title: 'website 6', cols: 1, rows: 1 },
+        { title: 'website 4', cols: 1, rows: 1 },
+        { title: 'website 5', cols: 1, rows: 1 },
+        { title: 'website 6', cols: 1, rows: 1 },
+        { title: 'website 5', cols: 1, rows: 1 },
+        { title: 'website 6', cols: 1, rows: 1 },
+        { title: 'website 4', cols: 1, rows: 1 },
+        { title: 'website 5', cols: 1, rows: 1 },
+        { title: 'website 6', cols: 1, rows: 1 }
       ];
     })
   );

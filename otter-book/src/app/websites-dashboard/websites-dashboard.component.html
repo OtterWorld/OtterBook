@@ -1,11 +1,11 @@
 
-  <!-- <mat-grid-list cols="3">
-    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows"> -->
+  <mat-grid-list fixedInViewport class="scroll-styles" cols="3">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
       <div rows="12" cols="12">
       <mat-card class="dashboard-card" cols='1' rows="1" >
         <mat-card-header>
           <mat-card-title>
-            <!-- {{card.title}} -->
+            {{card.title}}
             <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
               <mat-icon>more_vert</mat-icon>
             </button>
@@ -20,5 +20,5 @@
         </mat-card-content>
       </mat-card>
     </div>
-    <!-- </mat-grid-tile>
-  </mat-grid-list> -->
+    </mat-grid-tile>
+  </mat-grid-list>

@@ -4,7 +4,6 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
-import { CatalogComponent } from "./shared/catalog/catalog.component";
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MatGridListModule } from "@angular/material/grid-list";
@@ -19,14 +18,15 @@ import { MatListModule } from "@angular/material/list";
 import { WebsitesDashboardComponent } from "./websites-dashboard/websites-dashboard.component";
 
 import { MaterialModule } from "./material";
+import { CatalogComponent } from './catalog/catalog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    CatalogComponent,
     WebsitesDashboardComponent,
+    CatalogComponent,
   ],
   imports: [
     BrowserModule,
