@@ -167,5 +167,6 @@
       }
     }
   },
-  "defaultProject": "otter-book"
+  "defaultProject": "otter-book",
+  "cli": {}
 }

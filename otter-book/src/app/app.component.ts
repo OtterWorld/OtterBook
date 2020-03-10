@@ -37,10 +37,10 @@ export class AppComponent {
         return []
       }
       return [
-        { category: 'category 1', link: "#1", colorSchema: "red" },
-        { category: 'category 2', link: "#2", colorSchema: "red" },
-        { category: 'category 3', link: "#3", colorSchema: "red" },
-        { category: 'category 4', link: "#4", colorSchema: "red" }
+        { category: 'category 1', link: "#1", colorSchema: "#54123b" },
+        { category: 'category 2', link: "#2", colorSchema: "#84142d" },
+        { category: 'category 3', link: "#3", colorSchema: "#c02739" },
+        { category: 'category 4', link: "#4", colorSchema: "#0c7b93" }
       ]
     })
   )

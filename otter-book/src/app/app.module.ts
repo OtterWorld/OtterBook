@@ -1,5 +1,9 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+//State Managment
+import { StoreModule } from '@ngrx/store';
+import { currentThemeColor } from './store/global/color-scheme.reducer';
+//
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
@@ -42,6 +46,7 @@ import { CatalogComponent } from './catalog/catalog.component';
     MatSidenavModule,
     MatListModule,
     MaterialModule,
+    StoreModule.forRoot({ ColorScheme: currentThemeColor})
   ],
   providers: [],
   bootstrap: [AppComponent]
