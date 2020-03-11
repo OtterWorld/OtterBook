@@ -1,17 +1,29 @@
-import { createReducer, on } from '@ngrx/store';
-import { increment, decrement, reset } from "./color-scheme.action"
+import { ActionReducerMap } from '@ngrx/store';
 
-export interface State {
-  category: number;
-  colorSchema: number;
+import { ColorSchema } from '../../shared/color-schema.model';
+
+import * as ColorSchemaAction from './color-scheme.action';
+
+
+export interface ColorState {
+  colorSchema: ColorSchema;
 }
- 
-const _currentThemeColor = createReducer(initialState,
-  on(increment, state => state + 1),
-  on(decrement, state => state - 1),
-  on(reset, state => 0),
-);
- 
-export function currentThemeColor() {
-  // return _currentThemeColor(state, action);
+
+const initialState: ColorState = {
+  colorSchema: new ColorSchema('purple', 'category1'),
+  
+};
+export function colorSchemeReducer(
+  state: ColorState = initialState,
+  action: ColorSchemaAction.CurrentColorSchema
+) {
+  switch (action.type) {
+    case ColorSchemaAction.CURRENT_COLORSCHEMA:
+      return {
+        ...state,
+        category: [state.colorSchema, action.payload]
+      };
+    default:
+      return state;
+  }
 }

@@ -1,5 +1,14 @@
-import { createAction } from '@ngrx/store';
+import { Action } from '@ngrx/store';
 
-export const increment = createAction('[Counter Component] Increment');
-export const decrement = createAction('[Counter Component] Decrement');
-export const reset = createAction('[Counter Component] Reset');
+import { ColorSchema } from '../../shared/color-schema.model'
+
+export const CURRENT_COLORSCHEMA = '[COLORS SCHEMA] New ColorSchema';
+
+
+export class CurrentColorSchema implements Action {
+  readonly type = CURRENT_COLORSCHEMA;
+
+  constructor(public payload: ColorSchema) {}
+}
+
+export type ColorSchemaAction = CurrentColorSchema
