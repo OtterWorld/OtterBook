@@ -1,6 +1,12 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
+import { Store } from '@ngrx/store';
+
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
+
+import { GlobalState } from './store/models/global-state.model';
+import { AppState } from './store/models/app-state.model'
+import { ChangeColorScheme } from "./store/actions/global-state.action"
 
 import { map, shareReplay } from 'rxjs/operators';
 
@@ -11,9 +17,12 @@ import { Sidenav } from "./models/layout.model"
   styleUrls: ["./app.component.scss"]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = "otter-book";
-  constructor(private breakpointObserver: BreakpointObserver) { }
+  constructor(private breakpointObserver: BreakpointObserver, private store: Store<AppState>) { }
+
+   ColorScheme: Observable<GlobalState>;
+   newColorScheme: GlobalState = { colorSchema: '', id: ''}
 
   options: Sidenav = {
     fixed: true,
@@ -44,5 +53,16 @@ export class AppComponent {
       ]
     })
   )
+
+  ngOnInit() {
+      this.ColorScheme = this.store.select(store => store.globalColor);
+      this.store.dispatch(new ChangeColorScheme(this.newColorScheme) );
+  }
+
+  changeScheme() {
+     this.newColorScheme.id = '0';
+     this.store.dispatch(new ChangeColorScheme(this.newColorScheme) );
+     this.newColorScheme = { colorSchema: "", id: ""}
+  }
 
 }

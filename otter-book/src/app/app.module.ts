@@ -2,7 +2,7 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 //State Managment
 import { StoreModule } from '@ngrx/store';
-import * as fromApp from './store/app.reducer';
+import { GlobalReducer } from "./store/reducers/global-state.reducer"
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 //
@@ -50,8 +50,10 @@ import { CatalogComponent } from './catalog/catalog.component';
     MatSidenavModule,
     MatListModule,
     MaterialModule,
-    StoreModule.forRoot(fromApp.appReducer),
-    StoreRouterConnectingModule.forRoot(),
+    StoreModule.forRoot({
+      globalColor: GlobalReducer
+    }),
+
     StoreDevtoolsModule.instrument({ logOnly: environment.production })
   ],
   providers: [],
