@@ -51,8 +51,17 @@ import { CatalogComponent } from './catalog/catalog.component';
     MatListModule,
     MaterialModule,
     StoreModule.forRoot({
-      globalColor: GlobalReducer
-    }),
+      globalColor: GlobalReducer,
+    },
+    {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true,
+        strictStateSerializability: true,
+        strictActionSerializability: true
+      },
+    }
+    ),
 
     StoreDevtoolsModule.instrument({ logOnly: environment.production })
   ],

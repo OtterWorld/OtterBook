@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Directive } from "@angular/core";
 import { Store } from '@ngrx/store';
 
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
@@ -19,7 +19,7 @@ import { Sidenav } from "./models/layout.model"
 
 export class AppComponent implements OnInit {
   title = "otter-book";
-  constructor(private breakpointObserver: BreakpointObserver, private store: Store<AppState>) { }
+  constructor(private breakpointObserver: BreakpointObserver, private store: Store<{globalColor: {colorSchema: GlobalState }}>) { }
 
    ColorScheme: Observable<GlobalState>;
    newColorScheme: GlobalState = { colorSchema: '', id: ''}
@@ -55,14 +55,14 @@ export class AppComponent implements OnInit {
   )
 
   ngOnInit() {
-      this.ColorScheme = this.store.select(store => store.globalColor);
+      // this.ColorScheme = this.store.select(store => store.globalColor);
       this.store.dispatch(new ChangeColorScheme(this.newColorScheme) );
+      
   }
 
-  changeScheme() {
-     this.newColorScheme.id = '0';
-     this.store.dispatch(new ChangeColorScheme(this.newColorScheme) );
-     this.newColorScheme = { colorSchema: "", id: ""}
+  changeScheme(event: string) {
+    console.log(event)
+    //  this.store.select('globalColor')
   }
 
 }

@@ -27,9 +27,9 @@
       <mat-toolbar>Menu</mat-toolbar>
       <mat-divider></mat-divider>
       <mat-nav-list *ngFor="let list of lists | async" [ngStyle]="{'background-color': list.colorSchema }"> 
-        <a mat-list-item (click)="changeScheme()">{{ list.category}} {{ list.colorSchema}}</a>
-        <mat-divider></mat-divider>
+        <a mat-list-item (click)="changeScheme($event)"  >{{ list.category}} {{ list.colorSchema}}</a>
       </mat-nav-list>
+      <mat-divider></mat-divider>
     </mat-sidenav>
     <mat-sidenav-content>
       <mat-toolbar  color="accent">
