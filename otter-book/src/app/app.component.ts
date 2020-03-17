@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { GlobalState } from './store/models/global-state.model';
 import { AppState } from './store/models/app-state.model'
 import { ChangeColorScheme } from "./store/actions/global-state.action"
+import { GlobalReducer } from "./store/reducers/global-state.reducer"
 
 import { map, shareReplay } from 'rxjs/operators';
 
@@ -19,11 +20,15 @@ import { Sidenav } from "./models/layout.model"
 
 export class AppComponent implements OnInit {
   title = "otter-book";
+  
+  newStateColor: string;
   constructor(private breakpointObserver: BreakpointObserver, private store: Store<{globalColor: {colorSchema: GlobalState }}>) { }
 
    ColorScheme: Observable<GlobalState>;
    newColorScheme: GlobalState = { colorSchema: '', id: ''}
-
+   initialState: GlobalState = {
+    colorSchema: ''
+  };
   options: Sidenav = {
     fixed: true,
     bottom: 0,
@@ -60,9 +65,9 @@ export class AppComponent implements OnInit {
       
   }
 
-  changeScheme(event: string) {
-    console.log(event)
-    //  this.store.select('globalColor')
+  changeScheme(newColorSchema: string) {
+    this.initialState.colorSchema = newColorSchema;
+    this.store.dispatch(new ChangeColorScheme(this.newColorScheme) );
   }
 
 }
