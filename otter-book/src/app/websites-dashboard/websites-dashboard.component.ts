@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { fromEvent } from 'rxjs';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
 
 @Component({
@@ -8,7 +9,7 @@ import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
   styleUrls: ['./websites-dashboard.component.scss']
 })
 
-export class WebsitesDashboardComponent {
+export class WebsitesDashboardComponent implements OnInit {
   /** Based on the screen size, switch from standard to one column per row */
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -41,4 +42,10 @@ export class WebsitesDashboardComponent {
   );
 
   constructor(private breakpointObserver: BreakpointObserver) {}
+
+  ngOnInit() {
+    const scroll$ = fromEvent(document, 'scroll');
+    scroll$.subscribe(console.log)
+  }
+  
 }

@@ -2,7 +2,7 @@ import { Component, OnInit, Directive } from "@angular/core";
 import { Store } from '@ngrx/store';
 
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Observable } from 'rxjs';
+import { Observable, fromEvent } from 'rxjs';
 
 import { GlobalState } from './store/models/global-state.model';
 import { AppState } from './store/models/app-state.model'
@@ -22,7 +22,9 @@ export class AppComponent implements OnInit {
   title = "otter-book";
   
   newStateColor: string;
-  constructor(private breakpointObserver: BreakpointObserver, private store: Store<{globalColor: {colorSchema: GlobalState }}>) { }
+  constructor(private breakpointObserver: BreakpointObserver, private store: Store<{globalColor: {colorSchema: GlobalState }}>) { 
+    const scroll$ = fromEvent(document, 'scroll');
+  }
 
    ColorScheme: Observable<GlobalState>;
    newColorScheme: GlobalState = { colorSchema: '', id: ''}
@@ -81,7 +83,8 @@ Routing: Array<{}> = [
   ngOnInit() {
       // this.ColorScheme = this.store.select(store => store.globalColor);
       this.store.dispatch(new ChangeColorScheme(this.newColorScheme) );
-      
+       
+        // this.scroll$.subscribe(console.log)
   }
 
   changeScheme(newColorSchema: string) {
