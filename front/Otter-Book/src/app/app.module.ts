@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common'
+import { FormsModule } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { WebsitesDashboardModule } from './websites-dashboard-module/websites-da
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+/// Material UI
+import { AppMaterialModule } from './material.module'
 
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     CommonModule,
      // Custome Modules
     WebsitesDashboardModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    // Material UI
+    AppMaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

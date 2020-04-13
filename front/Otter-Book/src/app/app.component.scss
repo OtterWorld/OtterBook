@@ -1,0 +1,48 @@
+mat-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+  span {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    &:first-child {
+      justify-content: flex-start;
+    }
+    &:last-child {
+      justify-content: flex-end;
+    }
+  }
+  a {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    img {
+      width: 70%;
+      height: 70%;
+      margin: auto;
+    }
+  }
+
+  h1 {
+    margin: auto 0;
+  }
+}
+
+mat-select {
+  max-width: 150px;
+  margin-right: 1.5rem;
+}
+
+.example-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #eee;
+}
+
+mat-sidenav-content {
+  height: calc(100vh - 64px);
+}

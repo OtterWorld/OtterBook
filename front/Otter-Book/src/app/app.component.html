@@ -1,1 +1,37 @@
-<websites-dashboard></websites-dashboard>
+<mat-toolbar>
+  <span>
+    <h1>
+      Otter Book
+    </h1>
+  </span>
+  <span>
+    <mat-select>
+      <mat-option value="ENG">ENG</mat-option>
+      <mat-option value="RUS">RUS</mat-option>
+    </mat-select>
+    <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
+    <a href="#" matRipple [matRippleColor]="myColor">
+      <img src="assets/socials/linkedin.svg" alt="LinkedIn" class="src" />
+    </a>
+    <a href="#" matRipple [matRippleColor]="myColor">
+      <img src="assets/socials/github.svg" alt="LinkedIn" class="src" />
+    </a>
+  </span>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
+               (closed)="events.push('close!')">
+    Sidenav content
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <p><mat-checkbox >sidenav.opened</mat-checkbox></p>
+    <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
+    <p>Events:</p>
+    <div class="example-events">
+
+    </div>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
