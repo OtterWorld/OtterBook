@@ -7,11 +7,17 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
-
+import { MatCardModule } from '@angular/material/card';
+import { MatGridListModule } from '@angular/material/grid-list';
 // Small elements
 import { MatIconModule } from '@angular/material/icon';
 import { MatRippleModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material/list';
+import { MatTooltipModule } from '@angular/material/tooltip';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -20,10 +26,16 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatMenuModule,
     MatSelectModule,
     MatSidenavModule,
+    MatCardModule,
+    MatGridListModule,
     // Small elments
     MatIconModule,
     MatRippleModule,
     MatCheckboxModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatTooltipModule,
   ],
   exports: [
     MatSliderModule,
@@ -31,10 +43,16 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatMenuModule,
     MatSelectModule,
     MatSidenavModule,
+    MatCardModule,
+    MatGridListModule,
     // Small elements
     MatIconModule,
     MatRippleModule,
     MatCheckboxModule,
+    MatDividerModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatTooltipModule,
   ],
 })
 export class AppMaterialModule {}

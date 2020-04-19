@@ -1,37 +1,61 @@
 <mat-toolbar>
   <span>
-    <h1>
+    <h1 class="logo-header">
+      Logo
+    </h1>
+    <mat-divider [vertical]="true"></mat-divider>
+    <h1 class="OtterTM-styles" *ngIf="(isHandset$ | async) == false">
       Otter Book
+    </h1>
+    <h1 class="OtterTM-styles" *ngIf="isHandset$ | async">
+      Mobile Easter Egg#1
     </h1>
   </span>
   <span>
-    <mat-select>
-      <mat-option value="ENG">ENG</mat-option>
-      <mat-option value="RUS">RUS</mat-option>
-    </mat-select>
     <mat-slider min="1" max="100" step="1" value="1"></mat-slider>
-    <a href="#" matRipple [matRippleColor]="myColor">
+    <a
+      href="https://www.linkedin.com/in/yegor-gagarinov-a04ab3170/"
+      target="_blank"
+      matRipple
+      [matRippleColor]="myColor"
+    >
       <img src="assets/socials/linkedin.svg" alt="LinkedIn" class="src" />
     </a>
-    <a href="#" matRipple [matRippleColor]="myColor">
+    <a
+      href="https://github.com/OtterWorld"
+      matRipple
+      [matRippleColor]="myColor"
+      target="_blank"
+    >
       <img src="assets/socials/github.svg" alt="LinkedIn" class="src" />
     </a>
   </span>
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav #sidenav mode="side" [(opened)]="opened" (opened)="events.push('open!')"
-               (closed)="events.push('close!')">
-    Sidenav content
+  <mat-sidenav [opened]="(isHandset$ | async) === false" #sidenav mode="side">
+    <div class="moudules-list">
+    </div>
+        <mat-nav-list *ngFor="let list of lists" > 
+          <a mat-list-item [ngStyle]="{'background-color': list.colorSchema }"  [routerLink]="list.link" routerLinkActive="router-link-active"  >{{ list.category}} {{ list.colorSchema}}</a>
+        </mat-nav-list>
+    <!-- Lower Menu Section -->
+    <div class="lower-menu">
+      <div class="lower-menu-block">
+        <mat-form-field>
+          <mat-label>Language</mat-label>
+          <mat-select>
+            <mat-option value="ENG">ENG</mat-option>
+            <mat-option value="RUS">RUS</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <p><mat-checkbox >sidenav.opened</mat-checkbox></p>
-    <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
-    <p>Events:</p>
-    <div class="example-events">
-
+    <div class="main-page-router-nest">
+      <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
-
 </mat-sidenav-container>

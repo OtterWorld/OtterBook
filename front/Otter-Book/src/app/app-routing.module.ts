@@ -1,40 +1,40 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+/// Pages
+import { WelcomeComponent } from './welcome-page.component'
+import { WebsitesDashboard } from './websites-dashboard-module/containers/websites-dashboard.component'
 
 const routes: Routes = [
   {
-    path: '/',
+    path: '',
+    component: WelcomeComponent
   },
   {
     path:'Websites',
-    children: [
-       {
-         path: ':id'
-       }
-    ]
+    component: WebsitesDashboard
   },
-  {
-    path:'FlatDraw'
-  },
-  {
-    path:'PathFinder'
-  },
-  {
-    path:'SortAlgoritms'
-  },
-  {
-    path: "WebsiteScrapper"
-  },
-  {
-    path: 'ThreeJS'
-  },
-  {
-    path: 'WebGL'
-  },
-  {
-    path: 'C++'
-  }
+  // {
+  //   path:'FlatDraw'
+  // },
+  // {
+  //   path:'PathFinder'
+  // },
+  // {
+  //   path:'SortAlgoritms'
+  // },
+  // {
+  //   path: "WebsiteScrapper"
+  // },
+  // {
+  //   path: 'ThreeJS'
+  // },
+  // {
+  //   path: 'WebGL'
+  // },
+  // {
+  //   path: 'C++'
+  // }
 ];
 
 @NgModule({

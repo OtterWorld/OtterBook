@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core'
-
-
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from '../app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common'
 //Containers
 import { WebsitesDashboard } from './containers/websites-dashboard.component'
 //Components
@@ -24,8 +26,13 @@ declarations: [
   ExampleCard
 ],
 imports:[
+    AppRoutingModule,
+    BrowserModule,
+    CommonModule,
     // Material
     AppMaterialModule,
+    // Service related modules
+    HttpClientModule
 ],
 providers: [
   WebsitesDashboardServices

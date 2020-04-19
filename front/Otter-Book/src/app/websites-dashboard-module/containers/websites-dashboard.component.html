@@ -1,1 +1,33 @@
-<h2>asdasdasd</h2>
+<mat-toolbar>My App</mat-toolbar>
+<mat-grid-list cols="3" rowHeight="1:1" >
+  <mat-grid-tile *ngFor="let card of cards; let i = index">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <button
+          mat-card-avatar
+          matTooltip="card.stack.name"
+          matTooltipPosition="above"
+          class="example-header-image"
+          [ngStyle]="{'background-image': card.stack.image}"
+        ></button>
+        <mat-card-title> {{ card.projectName }}</mat-card-title>
+        <mat-card-subtitle>Position: {{ card.position }}</mat-card-subtitle>
+      </mat-card-header>
+      <img mat-card-image src="{{ card.overview }}" />
+      <mat-card-content>
+        <p>
+          {{ card.description }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>
+          <a  mat-list-item  [routerLink]="card.detailPage"> Details</a>
+        </button>
+        <button mat-button>
+          <a [href]="card.linkToWebsite">Go to project website</a>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+<mat-toolbar></mat-toolbar>
