@@ -1,8 +1,8 @@
 <mat-toolbar>
   <span>
-    <h1 class="logo-header">
-      Logo
-    </h1>
+      <h1 class="logo-header" routerLink="/">
+        Logo
+      </h1>
     <mat-divider [vertical]="true"></mat-divider>
     <h1 class="OtterTM-styles" *ngIf="(isHandset$ | async) == false">
       Otter Book
@@ -34,11 +34,16 @@
 
 <mat-sidenav-container>
   <mat-sidenav [opened]="(isHandset$ | async) === false" #sidenav mode="side">
-    <div class="moudules-list">
-    </div>
-        <mat-nav-list *ngFor="let list of lists" > 
-          <a mat-list-item [ngStyle]="{'background-color': list.colorSchema }"  [routerLink]="list.link" routerLinkActive="router-link-active"  >{{ list.category}} {{ list.colorSchema}}</a>
-        </mat-nav-list>
+    <div class="moudules-list"></div>
+    <mat-nav-list *ngFor="let list of lists">
+      <a
+        mat-list-item
+        [ngStyle]="{ 'background-color': list.colorSchema }"
+        [routerLink]="list.link"
+        routerLinkActive="router-link-active"
+        >{{ list.category }} {{ list.colorSchema }}</a
+      >
+    </mat-nav-list>
     <!-- Lower Menu Section -->
     <div class="lower-menu">
       <div class="lower-menu-block">

@@ -1,10 +1,35 @@
 mat-card {
   width: 60%;
 }
+.module-intro {
+  display: flex;
+  justify-content: center;
+}
 .mat-card-header {
   justify-content: space-between;
 }
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
   background-size: cover;
+  display: inline-block;
+  &:focus {
+    outline: none;
+  }
+}
+a[mat-card-avatar] {
+  margin-right: 1rem;
+}
+mat-grid-list {
+  min-height: 700px;
+}
+mat-card-header {
+  flex-direction: row-reverse;
+}
+mat-card-actions {
+  a {
+    color: inherit;
+    &:hover {
+      color: inherit;
+    }
+  }
 }

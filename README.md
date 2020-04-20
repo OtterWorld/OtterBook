@@ -6,7 +6,7 @@ This is an app created by me as my portfolio app where I will store all my achiv
 
 Frontend: Angular 9 /
 Backend: NestJS /
-Database: MongoDB
+Database: MySQL
 
 
 

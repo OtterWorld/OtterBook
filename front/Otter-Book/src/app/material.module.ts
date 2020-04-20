@@ -17,7 +17,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
-
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   imports: [
     CommonModule,
@@ -36,6 +36,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatFormFieldModule,
     MatListModule,
     MatTooltipModule,
+    MatButtonModule,
   ],
   exports: [
     MatSliderModule,
@@ -53,6 +54,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatFormFieldModule,
     MatListModule,
     MatTooltipModule,
+    MatButtonModule,
   ],
 })
 export class AppMaterialModule {}
