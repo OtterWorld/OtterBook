@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 /// Pages
 import { WelcomeComponent } from './welcome-page.component';
+import { ExampleCard } from './websites-dashboard-module/components/example-cart.component'
 import { WebsitesDashboard } from './websites-dashboard-module/containers/websites-dashboard.component';
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
     children: [
       {
         path: ':id',
+        component: ExampleCard,
       },
     ],
   },

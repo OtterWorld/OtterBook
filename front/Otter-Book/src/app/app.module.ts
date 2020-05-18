@@ -11,7 +11,9 @@ import { WebsitesDashboardModule } from './websites-dashboard-module/websites-da
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 /// Material UI
-import { AppMaterialModule } from './material.module'
+import { AppMaterialModule } from './material.module';
+import { NbThemeModule, NbLayoutModule } from '@nebular/theme';
+import { NbEvaIconsModule } from '@nebular/eva-icons'
 
 @NgModule({
   declarations: [
@@ -25,7 +27,10 @@ import { AppMaterialModule } from './material.module'
     WebsitesDashboardModule,
     BrowserAnimationsModule,
     // Material UI
-    AppMaterialModule
+    AppMaterialModule,
+    NbThemeModule.forRoot({ name: 'cosmic' }),
+    NbLayoutModule,
+    NbEvaIconsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
