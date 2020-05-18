@@ -2,17 +2,22 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 /// Pages
-import { WelcomeComponent } from './welcome-page.component'
-import { WebsitesDashboard } from './websites-dashboard-module/containers/websites-dashboard.component'
+import { WelcomeComponent } from './welcome-page.component';
+import { WebsitesDashboard } from './websites-dashboard-module/containers/websites-dashboard.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: WelcomeComponent
+    component: WelcomeComponent,
   },
   {
-    path:'Websites',
-    component: WebsitesDashboard
+    path: 'Websites',
+    component: WebsitesDashboard,
+    children: [
+      {
+        path: ':id',
+      },
+    ],
   },
   // {
   //   path:'FlatDraw'
@@ -39,6 +44,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

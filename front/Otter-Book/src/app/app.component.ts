@@ -29,9 +29,12 @@ export class AppComponent {
   /// Modules list
 
    lists = [
-    { category: 'category 1', link: "Websites", colorSchema: "#54123b" },
-    { category: 'category 2', link: "drawer", colorSchema: "#84142d" },
-    { category: 'category 3', link: "TreeJS", colorSchema: "#c02739" },
-    { category: 'category 4', link: "C", colorSchema: "#0c7b93" }
+    { category: 'Websites Dashboard', link: "Websites", colorSchema: "#54123b" },
+    { category: 'FlatDraw', link: "", colorSchema: "#84142d" },
+    { category: 'PathFinder', link: "", colorSchema: "#c02739" },
+    { category: 'SortAlgoritms', link: "", colorSchema: "#0c7b93" },
+    { category: 'ThreeJS', link: "", colorSchema: "#c02739" },
+    { category: 'WebGL', link: "", colorSchema: "#54123b" },
+    { category: 'C++', link: "", colorSchema: "#0c7b93" }
   ]
 }
